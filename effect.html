@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+  background: black;
+  font-family: "Oswald", sans-serif;
+  font-style: italic;
+}
+
+.container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+}
+
+.glitch {
+  color: rgb(255, 255, 255);
+  position: relative;
+  font-size: 9vw;
+  margin: 70px 200px;
+  animation: glitch 3s 3s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  /* text-shadow: -5px 0 magenta; */
+  /* overflow: hidden; */
+  top: 0;
+  animation:glitch-2 2s 2.05s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 rgb(211, 39, 16);
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: glitch-2 2s 2s infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes glitch-2 {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="glitch" data-text="ELISABÉTH">ELISABÉTH</div>
+    <div class="glow">ELISABÉTH</div>
+    <p class="subtitle">IMPRACTICAL DEVELOPER</p>
+    </div>
+    <div class="scanlines"></div>
+</body>
+</html>
